@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XII TKJ 1 - Official Website XII TKJ 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              accent: '#2563EB',
+              glow: '#3B82F6',
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-card {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass-card bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#home" class="flex items-center space-x-3 group nav-link">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-extrabold text-xl text-white shadow-lg shadow-blue-500/30 group-hover:scale-105 transition">
+          1
+        </div>
+        <span class="text-2xl font-black tracking-wider text-white">XII TKJ 1
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold tracking-wide">
+        <a href="#home" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">HOME</a>
+        <a href="#tentang" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">TENTANG</a>
+        <a href="#media" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">MEDIA</a>
+        <a href="#struktur" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">STRUKTUR</a>
+        <a href="#anggota" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">ANGGOTA</a>
+        <a href="#gallery" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">GALLERY</a>
+        <a href="#notes" class="nav-link px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-blue-600/25 transition">PESAN KELAS</a>
+      </div>
+
+      <div class="flex items-center space-x-2 md:hidden">
+        <button id="mobile-menu-btn" class="text-slate-300 text-2xl p-2">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 space-y-2 bg-slate-950 border-b border-slate-800">
+      <a href="#home" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">HOME</a>
+      <a href="#tentang" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">TENTANG</a>
+      <a href="#media" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">MEDIA</a>
+      <a href="#struktur" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">STRUKTUR</a>
+      <a href="#anggota" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">ANGGOTA</a>
+      <a href="#gallery" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">GALLERY</a>
+      <a href="#notes" class="nav-link block px-3 py-2 rounded-lg text-slate-300 hover:bg-blue-600/20">PESAN KELAS</a>
+    </div>
+  </nav>
+
+  <!-- HOME / HERO SECTION -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="awal.png" alt="Foto Kelas" class="w-full h-full object-cover filter brightness-30">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#060913] via-[#060913]/60 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-6">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-blue-600/30 border border-blue-500/50 text-blue-400 font-semibold text-xs tracking-wider uppercase animate-pulse">
+        OFFICIAL WEBSITE
+      </span>
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white uppercase">
+        WELCOME TO <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-400">XII TKJ 1</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto italic font-medium">
+        "Semua kenangan kita akan abadi disini."
+      </p>
+      <div class="pt-4 flex justify-center space-x-4">
+        <a href="#tentang" class="nav-link px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold transition shadow-lg shadow-blue-600/30">
+          Jelajahi Kelas
+        </a>
+        <a href="#media" class="nav-link px-8 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-white font-bold transition border border-slate-700">
+          Instagram Kelas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG SECTION -->
+  <section id="tentang" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="text-center space-y-4 mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">TENTANG XII TKJ 1</h2>
+      <p class="text-slate-400 max-w-3xl mx-auto text-base sm:text-lg">
+        XII TKJ 1 adalah rumah bagi para calon ahli teknologi masa depan. Di sini kami belajar, berbagi, menikmati momen, dan berproses bersama untuk mencapai impian di dunia Teknik Komputer dan Jaringan.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="glass-card p-8 rounded-2xl text-center space-y-2 cursor-pointer hover:scale-105 transition">
+        <div class="text-5xl font-black text-blue-400">25</div>
+        <div class="text-sm font-bold uppercase tracking-wider text-slate-400">TOTAL SISWA</div>
+      </div>
+      <div class="glass-card p-8 rounded-2xl text-center space-y-2 cursor-pointer hover:scale-105 transition">
+        <div class="text-5xl font-black text-indigo-400">17</div>
+        <div class="text-sm font-bold uppercase tracking-wider text-slate-400">LAKI-LAKI</div>
+      </div>
+      <div class="glass-card p-8 rounded-2xl text-center space-y-2 cursor-pointer hover:scale-105 transition">
+        <div class="text-5xl font-black text-sky-400">8</div>
+        <div class="text-sm font-bold uppercase tracking-wider text-slate-400">PEREMPUAN</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA SOSIAL SECTION -->
+  <section id="media" class="py-20 px-4 bg-slate-950/50">
+    <div class="max-w-4xl mx-auto space-y-8 text-center">
+      <div class="space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">INSTAGRAM KELAS</h2>
+        <p class="text-slate-400 max-w-xl mx-auto">
+          Ikuti keseruan momen harian, kebersamaan, dan dokumentasi kenangan sekolah kami melalui akun Instagram resmi kelas:
+        </p>
+      </div>
+
+      <div class="glass-card p-8 rounded-2xl max-w-md mx-auto space-y-6">
+        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-1">
+          <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+            <i class="fa-brands fa-instagram text-4xl text-pink-500"></i>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">@forever_newera</h3>
+          <p class="text-xs text-slate-400 mt-1">Official Instagram Account XII TKJ 1</p>
+        </div>
+        <a href="https://www.instagram.com/forever_newera/?hl=en" target="_blank" class="inline-flex items-center space-x-2 px-6 py-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold transition">
+          <span>Kunjungi Instagram</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUKTUR KELAS SECTION -->
+  <section id="struktur" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="text-center space-y-3 mb-16">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">STRUKTUR KELAS</h2>
+      <p class="text-slate-400">Klik pengurus kelas untuk melihat detail profilnya</p>
+    </div>
+
+    <div class="max-w-4xl mx-auto space-y-8">
+      <!-- WALI KELAS -->
+      <div class="flex justify-center">
+        <div onclick="openMemberByName('Toetik Irawati, S.Pd')" class="glass-card p-6 rounded-2xl w-72 text-center border-2 border-blue-500/50 shadow-xl shadow-blue-500/10 cursor-pointer hover:scale-105 transition">
+          <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">WALI KELAS</div>
+          <div class="text-lg font-bold text-white">Hotmaida</div>
+        </div>
+      </div>
+
+      <!-- KETUA & WAKIL -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div onclick="openMemberByName('Hayyan Muhammad')" class="glass-card p-5 rounded-2xl text-center cursor-pointer hover:scale-105 transition">
+          <div class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">KETUA KELAS</div>
+          <div class="text-base font-bold text-white">Hanif Khadafi</div>
+        </div>
+        <div onclick="openMemberByName('Wisnu Haekal')" class="glass-card p-5 rounded-2xl text-center cursor-pointer hover:scale-105 transition">
+          <div class="text-xs font-bold text-indigo-400 uppercase tracking-widest mb-1">WAKIL KETUA</div>
+          <div class="text-base font-bold text-white">M.Hafiz Nasution</div>
+        </div>
+      </div>
+
+      <!-- SEKRETARIS & BENDAHARA -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        </div>
+        <div onclick="openMemberByName('Muhammad Fuad H.')" class="glass-card p-4 rounded-xl text-center cursor-pointer hover:scale-105 transition">
+          <div class="text-[10px] font-bold text-indigo-400 uppercase">SEKRETARIS</div>
+          <div class="text-sm font-bold text-white mt-1">Nasywa Ayunda Elsa</div>
+        </div>
+        <div onclick="openMemberByName('Prisha Ayu Fhara Setiawan')" class="glass-card p-4 rounded-xl text-center cursor-pointer hover:scale-105 transition">
+          <div class="text-[10px] font-bold text-indigo-400 uppercase">BENDAHARA</div>
+          <div class="text-sm font-bold text-white mt-1">kalyla Adisty Dahari</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANGGOTA KELAS SECTION (TANPA FOTO, HANYA NAMA & INISIAL) -->
+  <section id="anggota" class="py-24 px-4 bg-slate-950/50">
+    <div class="max-w-7xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">ANGGOTA KELAS</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Cari dan klik kartu nama siswa untuk melihat pesan & info lengkap.
+        </p>
+      </div>
+
+      <!-- SEARCH BAR -->
+      <div class="max-w-md mx-auto relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input type="text" id="search-input" oninput="filterMembers()" placeholder="Cari nama anggota kelas..." class="w-full pl-11 pr-4 py-3 bg-slate-900/90 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500 transition">
+      </div>
+
+      <!-- GRID MEMBER -->
+      <div id="member-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Rendered via Javascript -->
+      </div>
+
+      <div class="flex justify-center items-center space-x-2 pt-6" id="pagination-controls">
+        <!-- Pagination JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="py-24 px-4 max-w-7xl mx-auto">
+    <div class="space-y-12">
+      <div class="text-center space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">GALLERY</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Klik foto untuk memperbesar tampilan (Fullscreen Viewer).
+        </p>
+      </div>
+
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Rendered via Javascript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY NOTES / PESAN KELAS SECTION -->
+  <section id="notes" class="py-24 px-4 bg-slate-950/50">
+    <div class="max-w-5xl mx-auto space-y-10">
+      <div class="text-center space-y-3">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase text-white">WALL OF MEMORIES</h2>
+        <p class="text-slate-400">Tinggalkan pesan, kesan, atau doa untuk kelas XII TKJ 1!</p>
+      </div>
+
+      <!-- FORM ADD NOTE -->
+      <div class="glass-card p-6 rounded-2xl max-w-xl mx-auto space-y-4">
+        <input type="text" id="note-sender" placeholder="Nama Kamu" class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500">
+        <textarea id="note-text" rows="3" placeholder="Tuliskan pesan atau kesanmu..." class="w-full px-4 py-2.5 bg-slate-900 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-blue-500"></textarea>
+        <button onclick="addStickyNote()" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition">
+          Tempel Pesan
+        </button>
+      </div>
+
+      <!-- NOTES CONTAINER -->
+      <div id="notes-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Rendered via Javascript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-900 pt-16 pb-12 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-slate-900">
+      <div class="space-y-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white">1</div>
+          <span class="text-xl font-extrabold text-white">XII TKJ 1</span>
+        </div>
+        <p class="text-slate-400 text-sm italic">
+          "Di SMK kita belajar lebih dari keterampilan — kita belajar tentang hidup."
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300">QUICK LINK</h3>
+        <ul class="space-y-2 text-sm text-slate-400">
+          <li><a href="#home" class="nav-link hover:text-white transition">Home Page</a></li>
+          <li><a href="#tentang" class="nav-link hover:text-white transition">About XII TKJ 1</a></li>
+          <li><a href="#struktur" class="nav-link hover:text-white transition">Class Structure</a></li>
+          <li><a href="#anggota" class="nav-link hover:text-white transition">Class Members</a></li>
+          <li><a href="#gallery" class="nav-link hover:text-white transition">Gallery Collection</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300">CREATED BY</h3>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs text-blue-400 font-bold">FR</div>
+            <div>
+              <div class="text-sm font-semibold text-white">Someone</div>
+              <div class="text-xs text-slate-500">Lead Developer</div>
+            </div>
+          </div>
+
+
+    <div class="max-w-7xl mx-auto pt-8 text-center text-xs text-slate-500">
+      &copy; 2026 SMK TELKOM 2 MEDAN XII TKJ 1. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- MODAL PROFILE MEMBER -->
+  <div id="member-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-backdrop bg-slate-950/80 p-4">
+    <div class="glass-card max-w-md w-full p-6 rounded-2xl relative space-y-4 bg-slate-900 border border-slate-700 shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center space-y-3">
+        <div id="modal-initials" class="w-20 h-20 mx-auto rounded-full bg-blue-600/30 border border-blue-500 flex items-center justify-center text-2xl font-black text-blue-400"></div>
+        <div>
+          <h3 id="modal-name" class="text-xl font-bold text-white"></h3>
+          <p id="modal-role" class="text-xs font-semibold text-blue-400 mt-1"></p>
+          <p id="modal-ig" class="text-xs text-slate-400 mt-0.5"></p>
+        </div>
+      </div>
+      <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-center">
+        <p class="text-xs italic text-slate-300" id="modal-quote">"Tetap semangat dan pantang menyerah!"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX GALLERY -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center modal-backdrop bg-slate-950/90 p-4" onclick="closeLightbox()">
+    <div class="max-w-3xl w-full relative">
+      <img id="lightbox-img" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl">
+      <p id="lightbox-title" class="text-center text-white font-bold mt-4 text-lg"></p>
+    </div>
+  </div>
+
+  <!-- SCRIPT IMPLEMENTASI -->
+  <script>
+    // DATA ANGGOTA KELAS (Tanpa foto, menggunakan nama lengkap, peran, ig, dan quote)
+    const members = [
+      { name: "Hanif Khadafi", role: "Ketua Kelas", quote: "Tido pun sodap ni" },
+  { name: "M.Hafiz Nasution", role: "Wakil Ketua", quote: "Jadilah versi terbaik dari dirimu sendiri." },
+  { name: "Nasywa Ayunda Elsa", role: "Sekretaris", quote: "Setiap langkah kecil membawa perubahan besar." },
+  { name: "Kalyla Adisty Dahari", role: "Bendahara", quote: "Bayar kas tepat waktu demi kedamaian bersama!" },
+  { name: "Abdul Gani", role: "Anggota kelas", quote: "Coding is my lifestyle." },
+  { name: "Arkan Ghiffary", role: "Anggota kelas", quote: "Belajar dari kemarin, hidup untuk hari ini." },
+  { name: "Denis Arif Dermawan", role: "Anggota kelas", quote: "Tetap tersenyum walau tugas menumpuk." },
+  { name: "Donie Aditya", role: "Anggota kelas", quote: "Pantang pulang sebelum koneksi terhubung." },
+  { name: "Fadilla Salsabila", role: "Anggota kelas", quote: "Hidup ini indah jika kita tahu cara menikmatinya." },
+  { name: "Fajar Al 'amin Panjaitan", role: "Anggota kelas", quote: "Koneksi jaringan rapat, persahabatan erat." },
+  { name: "Fatur Rahman", role: "Anggota kelas", quote: "Sabar dan percaya proses." },
+  { name: "Feliza Dwi Anjani", role: "Anggota kelas", quote: "Pemimpin yang baik mendengarkan dan merangkul." },
+  { name: "Galih Satrio Abimanyu", role: "Anggota kelas", quote: "Raihlah mimpimu setinggi langit." },
+  { name: "Khalisa Haniah Siregar", role: "Anggota kelas", quote: "Jaringan lancar, hati pun tenang." },
+  { name: "Muhammad Adam Sazali", role: "Anggota kelas", quote: "Desain visual adalah bahasa jiwaku." },
+  { name: "M.Akbar Rasya", role: "Anggota kelas", quote: "Simpanlah kenangan manis ini selamanya." },
+  { name: "M.Fahri Ramadhan", role: "Anggota kelas", quote: "Hidup ini indah jika kita tahu cara menikmatinya." },
+  { name: "Muhammad Andika", role: "Anggota kelas", quote: "Koneksi jaringan rapat, persahabatan erat." },
+  { name: "Olla Dina Putri Lubis", role: "Anggota kelas", quote: "Sabar dan percaya proses." },
+  { name: "Rafi Maulana Situmorang", role: "Anggota kelas", quote: "Pemimpin yang baik mendengarkan dan merangkul." },
+  { name: "Raisya Balqish Nikita", role: "Anggota kelas", quote: "Raihlah mimpimu setinggi langit." },
+  { name: "Rival Setiawan Yahya", role: "Anggota kelas", quote: "Jaringan lancar, hati pun tenang." },
+  { name: "Salsabilla Hallyza Putri", role: "Anggota kelas", quote: "Desain visual adalah bahasa jiwaku." },
+  { name: "Sergio Rafael", role: "Anggota kelas", quote: "Simpanlah kenangan manis ini selamanya." },
+  { name: "Zachary Halim Aziz", role: "Anggota kelas", quote: "Simpanlah kenangan manis ini selamanya." }
+    ];
+
+    // DATA GALLERY
+    const galleryItems = [
+      { title: " ", img: "awal.png" },
+      { title: " ", img: "foto2.png" },
+      { title: " ", img: "foto3.png" },
+      { title: " ", img: "foto4.png" },
+      { title: " ", img: "foto5.png" },
+      { title: " ", img: "foto6.png" },
+      { title: " ", img: "foto7.png" },
+      { title: " ", img: "foto8.png" },
+      { title: " ", img: "foto9.png" },
+      { title: " ", img: "foto10.png" },
+      { title: " ", img: "foto11.png" },
+      { title: " ", img: "foto13.jpeg" },
+      { title: " ", img: "foto14.jpeg" },
+      { title: " ", img: "foto15.jpeg" },
+      { title: " ", img: "foto16.jpeg" },
+      { title: " ", img: "foto17.jpeg" },
+    ];
+
+    // MEMBER RENDER & FILTER (Tanpa Foto, Menggunakan Inisial Nama)
+    let filteredMembers = [...members];
+    let currentMemberPage = 1;
+    const membersPerPage = 25;
+
+    function renderMembers() {
+      const container = document.getElementById('member-grid');
+      const pagination = document.getElementById('pagination-controls');
+      container.innerHTML = '';
+
+      const start = (currentMemberPage - 1) * membersPerPage;
+      const end = start + membersPerPage;
+      const paginatedMembers = filteredMembers.slice(start, end);
+
+      if (paginatedMembers.length === 0) {
+        container.innerHTML = `<div class="col-span-full text-center py-8 text-slate-500">Anggota tidak ditemukan.</div>`;
+        pagination.innerHTML = '';
+        return;
+      }
+
+      paginatedMembers.forEach(m => {
+        const initials = m.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+        container.innerHTML += `
+          <div onclick="openModal('${m.name}')" class="glass-card p-6 rounded-2xl text-center space-y-4 group cursor-pointer">
+            <div class="w-16 h-16 mx-auto rounded-full bg-blue-600/20 border border-blue-500/40 flex items-center justify-center font-bold text-blue-400 text-lg group-hover:scale-110 transition">
+              ${initials}
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-white line-clamp-1">${m.name}</h3>
+              <p class="text-xs font-semibold text-blue-400 mt-1">${m.role}</p>
+              <p class="text-xs text-slate-500 mt-0.5">${m.ig}</p>
+            </div>
+          </div>
+        `;
+      });
+
+      // Pagination
+      const totalPages = Math.ceil(filteredMembers.length / membersPerPage);
+      pagination.innerHTML = '';
+      for(let i = 1; i <= totalPages; i++) {
+        pagination.innerHTML += `
+          <button onclick="changeMemberPage(${i})" class="w-9 h-9 rounded-lg font-bold text-xs ${currentMemberPage === i ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'} transition">
+            ${i}
+          </button>
+        `;
+      }
+    }
+
+    function filterMembers() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      filteredMembers = members.filter(m => m.name.toLowerCase().includes(query) || m.role.toLowerCase().includes(query));
+      currentMemberPage = 1;
+      renderMembers();
+    }
+
+    function changeMemberPage(page) {
+      currentMemberPage = page;
+      renderMembers();
+    }
+
+    // MODAL MEMBER
+    function openModal(name) {
+      const m = members.find(item => item.name === name);
+      if(!m) return;
+      const initials = m.name.split(' ').map(n => n[0]).slice(0, 2).join('').toUpperCase();
+      document.getElementById('modal-initials').innerText = initials;
+      document.getElementById('modal-name').innerText = m.name;
+      document.getElementById('modal-role').innerText = m.role;
+      document.getElementById('modal-ig').innerText = m.ig;
+      document.getElementById('modal-quote').innerText = `"${m.quote}"`;
+      document.getElementById('member-modal').classList.remove('hidden');
+    }
+
+    function openMemberByName(name) {
+      openModal(name);
+    }
+
+    function closeModal() {
+      document.getElementById('member-modal').classList.add('hidden');
+    }
+
+    // GALLERY & LIGHTBOX
+    function renderGallery() {
+      const container = document.getElementById('gallery-grid');
+      container.innerHTML = '';
+      galleryItems.forEach(item => {
+        container.innerHTML += `
+          <div onclick="openLightbox('${item.img}', '${item.title}')" class="glass-card rounded-2xl overflow-hidden group cursor-pointer">
+            <div class="h-52 overflow-hidden">
+              <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-4 bg-slate-900/90">
+              <h4 class="font-bold text-sm text-white">${item.title}</h4>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function openLightbox(img, title) {
+      document.getElementById('lightbox-img').src = img;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-modal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+
+    // STICKY NOTES / PESAN
+    let notes = JSON.parse(localStorage.getItem('lastttero_notes')) || [
+      { sender: "Farhan", text: "Sukses terus buat XII TKJ 2, kelak kita jadi orang sukses semua!" },
+      { sender: "Rifki", text: "Kenangan di kelas ini gak bakal pernah tergantikan!" }
+    ];
+
+    function renderNotes() {
+      const container = document.getElementById('notes-grid');
+      container.innerHTML = '';
+      notes.forEach(n => {
+        container.innerHTML += `
+          <div class="glass-card p-5 rounded-2xl space-y-2 border-l-4 border-l-blue-500">
+            <p class="text-sm text-slate-300 italic">"${n.text}"</p>
+            <div class="text-xs font-bold text-blue-400 text-right">— ${n.sender}</div>
+          </div>
+        `;
+      });
+    }
+
+    function addStickyNote() {
+      const sender = document.getElementById('note-sender').value.trim();
+      const text = document.getElementById('note-text').value.trim();
+      if(!sender || !text) {
+        alert('Mohon isi nama dan pesan terlebih dahulu!');
+        return;
+      }
+      notes.unshift({ sender, text });
+      localStorage.setItem('lastttero_notes', JSON.stringify(notes));
+      document.getElementById('note-sender').value = '';
+      document.getElementById('note-text').value = '';
+      renderNotes();
+    }
+
+    // MOBILE MENU TOGGLE
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // SMOOTH SCROLL NAVIGATION HANDLER
+    document.querySelectorAll('.nav-link').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            document.getElementById('mobile-menu').classList.add('hidden');
+          }
+        }
+      });
+    });
+
+    function renderNotes() {
+  const container = document.getElementById('notes-grid');
+  container.innerHTML = '';
+  
+  if (notes.length === 0) {
+    container.innerHTML = `<div class="col-span-full text-center py-6 text-slate-500">Belum ada pesan tersimpan.</div>`;
+    return;
+  }
+
+  notes.forEach((n, index) => {
+    container.innerHTML += `
+      <div class="glass-card p-5 rounded-2xl space-y-2 border-l-4 border-l-blue-500 relative group">
+        <button onclick="deleteNote(${index})" class="absolute top-3 right-3 text-slate-500 hover:text-red-400 text-xs transition opacity-0 group-hover:opacity-100">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+        <p class="text-sm text-slate-300 italic">"${n.text}"</p>
+        <div class="text-xs font-bold text-blue-400 text-right">— ${n.sender}</div>
+      </div>
+    `;
+  });
+}
+
+// Fungsi untuk menghapus pesan spesifik berdasarkan urutannya
+function deleteNote(index) {
+  notes.splice(index, 1);
+  localStorage.setItem('lastttero_notes', JSON.stringify(notes));
+  renderNotes();
+}
+    // INIT
+    renderMembers();
+    renderGallery();
+    renderNotes();
+  </script>
+</body>
+</html>
