@@ -471,6 +471,7 @@ document.addEventListener('DOMContentLoaded', initHeroSlideshow);
       { title: " ", img: "foto18.jpeg" },
       { title: " ", img: "foto19.jpeg" },
       { title: " ", img: "foto20.jpeg" },
+      { title: " ", type: "video", src: "vid1.mp4" },
     ];
 
     // MEMBER RENDER & FILTER (Tanpa Foto, Menggunakan Inisial Nama)
@@ -553,18 +554,66 @@ document.addEventListener('DOMContentLoaded', initHeroSlideshow);
     }
 
 // GALLERY (Ukuran Tetap Sama h-52, Full Foto Tanpa Kotak Hitam)
+
 function renderGallery() {
   const container = document.getElementById('gallery-grid');
   container.innerHTML = '';
+
   galleryItems.forEach(item => {
-    container.innerHTML += `
-      <div onclick="openLightbox('${item.img}', '${item.title}')" class="glass-card rounded-2xl overflow-hidden group cursor-pointer relative h-52">
-        <!-- Foto Mengisi Seluruh Wadah h-52 -->
-        <img src="${item.img}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-      </div>
-    `;
+    if (item.type === 'video') {
+      container.innerHTML += `
+        <div class="glass-card rounded-2xl overflow-hidden relative h-52">
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            class="w-full h-full object-cover block"
+            aria-label="${item.title}">
+            <source src="${item.src}" type="video/mp4">
+            Browser kamu tidak mendukung video ini.
+          </video>
+        </div>
+      `;
+    } else {
+      container.innerHTML += `
+        <div
+          onclick="openLightbox('${item.img}', '${item.title}')"
+          class="glass-card rounded-2xl overflow-hidden group cursor-pointer relative h-52">
+          <img
+            src="${item.img}"
+            alt="${item.title || 'Foto kenangan kelas'}"
+            loading="lazy"
+            class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+        </div>
+      `;
+    }
   });
+
+  // Autoplay saat video terlihat dan jeda saat scroll menjauh
+  if ('IntersectionObserver' in window) {
+    const videos = container.querySelectorAll('video');
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    videos.forEach(video => videoObserver.observe(video));
+  }
 }
+
 
     function openLightbox(img, title) {
       document.getElementById('lightbox-img').src = img;
