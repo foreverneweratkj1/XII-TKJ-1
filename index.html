@@ -8,22 +8,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              accent: '#2563EB',
-              glow: '#3B82F6',
-            }
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif']
-          }
-        }
-      }
-    }
+
+    
+const backgroundSound = document.getElementById('backgroundSound');
+const musicButton = document.getElementById('musicButton');
+
+function toggleMusic() {
+  const audio = document.getElementById('backgroundSound');
+  const button = document.getElementById('musicButton');
+
+  if (!audio || !button) {
+    alert('Elemen audio atau tombol musik tidak ditemukan.');
+    return;
+  }
+
+  if (audio.paused) {
+    audio.volume = 0.7;
+
+    audio.play()
+      .then(() => {
+        button.textContent = '⏸ Matikan Musik';
+      })
+      .catch(error => {
+        console.error('Gagal memutar musik:', error);
+        alert('Musik gagal diputar. Buka F12 > Console untuk melihat penyebabnya.');
+      });
+  } else {
+    audio.pause();
+    button.textContent = '▶ Putar Musik';
+  }
+}
     
 
     // LIST FOTO HERO BACKGROUND (Ganti dengan link foto-foto kelasmu)
@@ -100,6 +114,22 @@ document.addEventListener('DOMContentLoaded', initHeroSlideshow);
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 selection:bg-blue-600 selection:text-white">
+
+  
+<!-- Background Sound -->
+<audio id="backgroundSound" loop>
+  <source src="backsound.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<!-- Tombol Musik -->
+<button
+  id="musicButton"
+  onclick="toggleMusic()"
+  class="fixed bottom-5 right-5 z-50 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg hover:bg-blue-500">
+  ▶ Putar Musik
+</button>
+
   <canvas id="space-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
 
   <!-- NAVBAR -->
